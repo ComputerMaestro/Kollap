@@ -16,4 +16,4 @@ volumes:
     driver_opts:
       type: 'none'
       o: 'bind'
-      device: 'E:/Interview/Collap/db_data'
+      device: '${KOLLAP_DB}'
