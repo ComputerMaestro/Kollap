@@ -1,12 +1,10 @@
-version: "3"
-
 services:
   db:
     image: postgres
     environment:
-      - POSTGRES_USER=admin
-      - POSTGRES_PASSWORD=123456
-      - POSTGRES_DB=kollapdb
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: kollapdb
     ports:
       - "5432:5432"
     volumes:

@@ -1,6 +1,7 @@
 package main
 
 import (
+	"Collap/internal/server"
 	"context"
 	"log"
 
@@ -14,4 +15,5 @@ func main() {
 	}
 	defer dbPool.Close()
 
+	server.StartServer()
 }
