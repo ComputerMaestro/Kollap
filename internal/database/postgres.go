@@ -2,6 +2,7 @@ package database
 
 import (
 	"Collap/internal/config"
+	"Collap/internal/workspace"
 
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
@@ -11,7 +12,7 @@ type Database interface {
 	GetDb() *gorm.DB
 }
 
-func InitializeDB(conf *config.Db) *gorm.DB {
+func InitializeDB(conf *config.Db) {
 	dsn := "host=" + conf.Host +
 		" user=" + conf.User +
 		" password=" + conf.Password +
@@ -23,5 +24,6 @@ func InitializeDB(conf *config.Db) *gorm.DB {
 	if err != nil {
 		panic("failed to establish connection to db")
 	}
-	return db
+
+	workspace.InitializeWorkspaceRepository(db)
 }
