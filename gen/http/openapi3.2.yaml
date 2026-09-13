@@ -1,0 +1,39 @@
+openapi: 3.2.0
+info:
+    title: Goa API
+    version: 0.0.1
+servers:
+    - url: http://localhost:80
+      name: kollap
+      description: Default server for kollap
+paths:
+    /workspace/{name}:
+        get:
+            tags:
+                - kollap
+            summary: createWorkspace kollap
+            operationId: kollap#createWorkspace
+            parameters:
+                - name: name
+                  in: path
+                  description: test1
+                  required: true
+                  schema:
+                    type: string
+                    description: test1
+                    example: Est non necessitatibus quaerat voluptas doloremque rerum.
+                  example: Quo nulla ut rerum.
+            responses:
+                "200":
+                    description: OK response.
+                    content:
+                        application/json:
+                            schema:
+                                type: string
+                                description: Created
+                                example: Facere exercitationem sunt ut quod placeat.
+                            example: Facere exercitationem sunt ut quod placeat.
+components: {}
+tags:
+    - name: kollap
+      description: A backend service powering a Collaborative Knowledge Platform
